@@ -22,6 +22,9 @@ class Test_Valid_Path:
         
         Test Preconditions : 1- Borrower accepted the lender's offer
                              2- Lender decided to fund the loan
+                             
+        Input Data : 1- lender balance
+                     2- loan amount
     '''
     def testValidLenderBalance(self,setUp):
         self.driver = setUp

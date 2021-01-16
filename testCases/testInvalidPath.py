@@ -23,6 +23,9 @@ class Test_Valid_Path:
         
         Test Preconditions : 1- Borrower accepted the lender's offer
                              2- Lender decided to fund the loan
+                             
+        Input Data : 1- lender balance
+                     2- loan amount
     '''
     def testErrorMessage(self,setUp):
         self.driver = setUp
@@ -64,6 +67,9 @@ class Test_Valid_Path:
                                 of lender balance is less than loan amount
                              4- Route to bank account page
                              5- Lender has verified bank account
+                             
+        Input Data : 1- lender has bank account or not
+
     '''
     def testRoutingToBalancePage(self,setUp):
         if(self.hasBankAccount):
@@ -83,6 +89,9 @@ class Test_Valid_Path:
                                 of lender balance is less than loan amount
                              4- Route to bank account page
                              5- Lender doesn't have verified bank account
+                             
+        Input Data : 1- lender has bank account or not
+
     '''
     def testRoutingToAddBankAccount(self,setUp):
         if(not self.hasBankAccount):
@@ -132,8 +141,11 @@ class Test_Valid_Path:
                              5- Lender doesn't have verified bank account
                              6- Lender connected to bank account
                              7- Lender added balance 
+                
+        Input Data : 1- lender has added balance to account
+
     '''
-    def testAddingBalanceS(self,setUp):
+    def testAddingBalance(self,setUp):
         LP = LoanPage(self.driver)
         
         if(self.hasAddedBalance):
